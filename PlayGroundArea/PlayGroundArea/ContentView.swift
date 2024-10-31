@@ -7,14 +7,15 @@
 
 import SwiftUI
 
+var firstTık=""
+let secondTık="Aman Ormancııııığ"
+
 struct ContentView: View {
     var body: some View {
         VStack {
-            Text("Hello World!")
-                .font(.largeTitle)
-                .padding()
+            Text(firstTık)
             Button(action: {
-                print("Butona Tıklanıyor")
+                firstTık = secondTık
             }) {
                 Text("Bana tıkla")
                     .font(.title)
@@ -23,6 +24,7 @@ struct ContentView: View {
                     .cornerRadius(10)
                     .foregroundColor(.white)
             }.padding()
+            
         }
     }
 }

@@ -1,22 +1,39 @@
 import UIKit
 
-var deger = 10
+var metin: String?
 
-var numara : Int?
+metin = "merhaba"
 
-numara = 20
+if let metin = metin {
+    print(metin)
+}else{
+    print("Herhangi bir metin gelmedi")
+}
 
-print(numara!)
+let deger = "48"
 
-var sayi1 = 30, sayi2 = 40, sayi3 = 10, harf = "F"
+if let deger = Int(deger){
+    print(deger)
+}else{
+    print("Yanlış deger")
+}
 
-print(sayi1)
-print(sayi2)
-print(sayi3)
-print(harf)
 
-class Deneme{
-    func denemeFonksiyonu(){
-        print("deneme fonksiyonu")
-    }
+let dizi = [5,7,9,1,4,2,8,3,6]
+
+print("dizinin büyükten küçüğe sıralanması: \(dizi.sorted())")
+if let max = dizi.max(){
+    print("dizinin en büyük elemanı: \(dizi.max()!)")
+}else{
+    print("Maks deger bulunamadı")
+}
+
+print("Sayılar: \(dizi)")
+
+for i in dizi{
+    print("Sayılar: \(i)")
+}
+
+for(index, dizi) in dizi.enumerated(){
+    print("Sonuc: \(index) - \(dizi)")
 }

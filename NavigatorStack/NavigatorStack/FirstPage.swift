@@ -8,17 +8,32 @@
 import SwiftUI
 
 struct FirstPage: View {
-    @State private var navigateToSecondPage = false
+    @State private var login = false
+    @State private var register = false
     
     var body: some View {
         NavigationStack {
-            VStack {
-                Button("Go to Second Page") {
-                    navigateToSecondPage = true
+            VStack(spacing: 80) {
+                
+                Button("Login") {
+                    login = true
                 }
-                .navigationDestination(isPresented: $navigateToSecondPage) {
+                .navigationDestination(isPresented: $login) {
                     SecondPage()
                 }
+                
+                Button("Register") {
+                    register = true
+                }
+                .sheet(isPresented: $register) {
+                    SecondPage()
+                }
+                /*
+                 Ya da
+                .fullScreenCover(isPresented: $register) {
+                    SecondPage()
+                }
+                 */
             }.navigationTitle("Ana Sayfa")
         }
     }

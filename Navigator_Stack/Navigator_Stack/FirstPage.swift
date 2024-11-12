@@ -53,6 +53,14 @@ struct FirstPage: View {
                 .navigationDestination(isPresented: $goPage){
                     GoPage()
                 }
+                
+                NavigationLink(destination: FourthPage()){
+                    Text("Go to Page 4")
+                        .padding()
+                        .background(.red)
+                        .foregroundColor(.black)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                }
             }
         }.navigationTitle("Ana Sayfa")
     }

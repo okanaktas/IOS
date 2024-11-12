@@ -4,7 +4,6 @@
 //
 //  Created by Okan Aktas on 13.11.2024.
 //
-
 import SwiftUI
 
 struct FirstPage: View {
@@ -14,7 +13,6 @@ struct FirstPage: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 80) {
-                
                 Button("Login") {
                     login = true
                 }

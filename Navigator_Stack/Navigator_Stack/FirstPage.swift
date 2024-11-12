@@ -10,6 +10,7 @@ import SwiftUI
 struct FirstPage: View {
     @State private var login: Bool = false
     @State private var register: Bool = false
+    @State private var goPage: Bool = false
     
     var body: some View {
         NavigationStack{
@@ -41,6 +42,17 @@ struct FirstPage: View {
                  SecondPage()
                  }
                  */
+                
+                Button("Go Page"){
+                    goPage = true
+                }
+                .padding()
+                .background(Color.cyan)
+                .foregroundColor(.black)
+                .cornerRadius(8)
+                .navigationDestination(isPresented: $goPage){
+                    GoPage()
+                }
             }
         }.navigationTitle("Ana Sayfa")
     }

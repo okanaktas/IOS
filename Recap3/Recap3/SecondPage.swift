@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct SecondPage: View {
+    @State private var goPage: Bool = true
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            
+        }.navigationDestination(isPresented: $goPage){
+            let kisi = Kisiler(isim: "Okan", yas: 28, boy: 1.80, bekar: true)
+            VeriAlinacakOlanSayfa(kisi:kisi)
+        }
     }
 }
 

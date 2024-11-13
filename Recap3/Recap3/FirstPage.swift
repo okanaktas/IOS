@@ -8,46 +8,37 @@
 import SwiftUI
 
 struct FirstPage: View {
-    @State private var forButton1 = false
-    @State private var forButton2 = false
-    @State private var forButton3 = false
+    @State private var goFirstPage : Bool = false
+    @State private var goSecondPage : Bool = false
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 60){
-                Button("Button 1"){
-                    forButton1 = true
+                Button("Go to First Page!"){
+                    goFirstPage = true
                 }
-                    .padding()
-                    .background(.green)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
-                    .navigationDestination(isPresented: $forButton1){
-                        FirstPage()
-                    }
-                
-                
-                Button("Button 2"){
-                    forButton3 = true
+                .padding()
+                .background(.black)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                .navigationDestination(isPresented: $goFirstPage){
+                    SecondPage()
                 }
-                    .padding()
-                    .background(.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
                 
-                
-                Button("Button 3"){
-                    forButton3 = true
+                Button("Go to Second Page!"){
+                    goSecondPage = true
                 }
-                    .padding()
-                    .background(.cyan)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
+                .padding()
+                .background(.black)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                .sheet(isPresented: $goSecondPage){
+                    ThirdtPage()
+                }
             }
         }
     }
 }
-
 
 #Preview {
     FirstPage()

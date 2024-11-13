@@ -8,33 +8,32 @@
 import SwiftUI
 
 struct FirstPage: View {
-    @State private var goFirstPage : Bool = false
-    @State private var goSecondPage : Bool = false
+    @State private var switchStatus : Bool = false
+    @State private var switchStatus2 : Bool = false
     
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 60){
-                Button("Go to First Page!"){
-                    goFirstPage = true
+        NavigationStack{
+            VStack{
+                Toggle("Switch",isOn: $switchStatus)
+                    .onChange(of: switchStatus){
+                        value in
+                        print("Switch: \(value)")
+                    }
+                    .padding()
+                    .toggleStyle(SwitchToggleStyle(tint: .red))
+                
+                
+                Toggle("Switch",isOn: $switchStatus2).onChange(of: switchStatus){
+                    value in
+                    print("Switch: \(value)")
                 }
                 .padding()
-                .background(.black)
-                .foregroundColor(.white)
-                .cornerRadius(10)
-                .navigationDestination(isPresented: $goFirstPage){
-                    SecondPage()
+                
+                Button("Son Durum Print Ekraninda"){
+                    print("Switch: \(switchStatus)")
+                    print("Switch 2: \(switchStatus2)")
                 }
                 
-                Button("Go to Second Page!"){
-                    goSecondPage = true
-                }
-                .padding()
-                .background(.black)
-                .foregroundColor(.white)
-                .cornerRadius(10)
-                .sheet(isPresented: $goSecondPage){
-                    ThirdtPage()
-                }
             }
         }
     }

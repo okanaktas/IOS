@@ -14,17 +14,22 @@ struct GameView: View {
     @State private var input = ""
     
     var body: some View {
-        VStack(spacing: 80) {
+        VStack(spacing: 60) {
             HStack{
                 Text("Remaining Guess: ")
                     .font(.system(size: 36))
                 
                 Text("\(remainingGuess)")
                     .font(.system(size: 36))
-                .foregroundColor(remainingGuess > 2 ? .black : .red)}
+                    .foregroundColor(remainingGuess > 2 ? .black : .red)
+            }
             
             Text("Help for your guess: \(info)")
                 .font(.system(size: 24))
+            
+            TextField("Guess: ", text: $input)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
             
             Button("Guess it "){
                 goResultView = true

@@ -22,11 +22,11 @@ struct HomeView: View {
                 Button("Start Game"){
                     goGameView = true
                 }
-                    .padding()
-                    .frame(width: 250,height: 60)
-                    .background(.tint)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
+                .padding()
+                .frame(width: 250,height: 60)
+                .background(.tint)
+                .foregroundColor(.white)
+                .cornerRadius(8)
             }.navigationDestination(isPresented: $goGameView){
                 GameView()
             }

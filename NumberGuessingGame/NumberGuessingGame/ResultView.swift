@@ -4,23 +4,14 @@
 //
 //  Created by Okan Aktas on 14.11.2024.
 //
-
 import SwiftUI
 
 struct ResultView: View {
-    @State private var result = false
+    @State var result = true
     
     var body: some View {
         VStack(spacing: 60){
-            if(result){
-                Text("You Lose")
-                    .font(.system(size: 36))
-                    .bold()
-                Image("sad")
-                    .resizable().frame(width: 128,height: 128)
-                    .imageScale(.large)
-                    .foregroundStyle(.red)
-            }else{
+            if result {
                 Text("You Win !")
                     .font(.system(size: 36))
                     .bold()
@@ -28,8 +19,15 @@ struct ResultView: View {
                     .resizable().frame(width: 128,height: 128)
                     .imageScale(.large)
                     .foregroundStyle(.tint)
+            } else {
+                Text("You Lose")
+                    .font(.system(size: 36))
+                    .bold()
+                Image("sad")
+                    .resizable().frame(width: 128,height: 128)
+                    .imageScale(.large)
+                    .foregroundStyle(.red)
             }
-       
         }
     }
 }

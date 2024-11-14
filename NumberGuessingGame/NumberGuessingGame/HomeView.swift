@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var goGameView = false
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 80) {
@@ -17,12 +19,16 @@ struct HomeView: View {
                     .resizable().frame(width: 128,height: 128)
                     .imageScale(.large)
                     .foregroundStyle(.tint)
-                Button("Start Game"){}
+                Button("Start Game"){
+                    goGameView = true
+                }
                     .padding()
                     .frame(width: 250,height: 60)
                     .background(.tint)
                     .foregroundColor(.white)
                     .cornerRadius(8)
+            }.navigationDestination(isPresented: $goGameView){
+                GameView()
             }
         }
     }

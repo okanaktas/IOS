@@ -8,22 +8,23 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var goSecondView = false
-    @State private var merhaba = "Merhabalar"
+    @State private var goGameView = false
     var body: some View {
         NavigationStack {
-            VStack {
-                Button("Go Second Page"){
-                    goSecondView = true
+            VStack(spacing: 60) {
+                Text("Welcome !")
+                    .font(.system(size: 34))
+                
+                Button("Go Game Screen !"){
+                    goGameView = true
                 }
                 .padding()
                 .background(.tint)
                 .foregroundColor(.white)
                 .cornerRadius(10)
-                .navigationDestination(isPresented: $goSecondView){
-                    SecondView(deger : merhaba)
+                .navigationDestination(isPresented: $goGameView){
+                    GameView()
                 }
-                
             }
         }
     }

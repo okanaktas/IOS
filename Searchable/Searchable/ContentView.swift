@@ -17,7 +17,7 @@ struct ContentView: View {
             .navigationTitle("Search")
             .padding()
         }.searchable(text: $searchedWord, prompt: "Search")
-            .onChange(of: searchedWord) { s in
+            .onChange(of: searchedWord) { _ , s in
                 print("Result for search: \(s)")
             }
     }

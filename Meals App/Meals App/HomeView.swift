@@ -15,7 +15,9 @@ struct HomeView: View {
         NavigationStack {
             List{
                 ForEach(mealsList) { meal in
-                    MealLineDesign(meal: meal)
+                    NavigationLink(destination: DetailsView(meal: meal)){
+                        MealLineDesign(meal: meal)
+                    }
                 }
             }.navigationTitle("Meals")
                 .onAppear() {
@@ -32,7 +34,7 @@ struct HomeView: View {
                     let m5 = Meals(mel_id: 5, meal_name: "Kofte", meal_image: "kofte",meal_price: 35)
                     
                     let m6 = Meals(mel_id: 6, meal_name: "Makarna", meal_image: "makarna",meal_price: 35)
-              
+                    
                     
                     
                     list.append(m1)

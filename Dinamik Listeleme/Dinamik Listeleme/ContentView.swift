@@ -15,10 +15,13 @@ struct ContentView: View {
         NavigationStack {
             List{
                 ForEach(countryList){i in
-                    CountriesItem(country : i)
-                        .onTapGesture {
-                            print("\(i.name!) seçildi")
-                        }
+                    NavigationLink(destination: DetailsView(counties: i)){
+                        CountriesItem(country : i)
+                            .onTapGesture {
+                                print("\(i.name!) seçildi")
+                            }
+                    }
+                    
                 }.onDelete(perform: delete)
             }
             //.listStyle(PlainListStyle())

@@ -35,8 +35,6 @@ struct HomeView: View {
                     
                     let m6 = Meals(mel_id: 6, meal_name: "Makarna", meal_image: "makarna",meal_price: 35)
                     
-                    
-                    
                     list.append(m1)
                     list.append(m2)
                     list.append(m3)

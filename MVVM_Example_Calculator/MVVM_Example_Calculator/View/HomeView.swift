@@ -10,7 +10,8 @@ import SwiftUI
 struct HomeView: View {
     @State private var firstValue = ""
     @State private var secondValue = ""
-    @State private var result: Double = 0
+    
+    @ObservedObject private var homeViewViewModel = HomeViewViewModel()
     
     var body: some View {
         NavigationStack {
@@ -25,7 +26,7 @@ struct HomeView: View {
                 
                 HStack(spacing: 20){
                     Button("Sum") {
-                        result = Double(firstValue)! + Double(secondValue)!
+                        homeViewViewModel.sum(firstValue: firstValue, secondValue: secondValue)
                     }
                     .padding()
                     .background(.tint)
@@ -33,7 +34,7 @@ struct HomeView: View {
                     .cornerRadius(8)
                     
                     Button("Multiply") {
-                        result = Double(firstValue)! * Double(secondValue)!
+                        homeViewViewModel.multiply(firstValue: firstValue, secondValue: secondValue)
                     }
                     .padding()
                     .background(.tint)
@@ -41,7 +42,7 @@ struct HomeView: View {
                     .cornerRadius(8)
                 }.padding()
                 
-                Text("Result: \(result)").font(.system(size: 28))
+                Text("Result: \(homeViewViewModel.result)").font(.system(size: 28))
             }
             .padding()
         }

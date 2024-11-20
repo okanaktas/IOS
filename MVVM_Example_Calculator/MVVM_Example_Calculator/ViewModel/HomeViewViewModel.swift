@@ -9,5 +9,20 @@ import Foundation
 
 
 class HomeViewViewModel : ObservableObject {
+    @Published var result: String = "0.0"
+    
+    func sum(firstValue: String, secondValue: String){
+        if let firstValue = Double(firstValue), let secondValue = Double(secondValue){
+            let sum = firstValue + secondValue
+            result = String(sum)
+        }
+    }
+    
+    func multiply(firstValue: String, secondValue: String){
+        if let firstValue = Double(firstValue), let secondValue = Double(secondValue){
+            let multiply = firstValue * secondValue
+            result = String(multiply)
+        }
+    }
     
 }

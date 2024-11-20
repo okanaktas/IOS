@@ -50,9 +50,9 @@ struct HomeView: View {
                         
                         let m4 = Movies(movie_id: 3,movie_name: "Anadoluda", movie_year: 2010,movie_image: "birzamanlaranadoluda",category: c2,director: d3)
                         
-                        let m5 = Movies(movie_id: 3,movie_name: "Inception", movie_year: 2010,movie_image: "inception",category: c2,director: d4)
+                        let m5 = Movies(movie_id: 3,movie_name: "The Pianist", movie_year: 2010,movie_image: "thepianist",category: c2,director: d4)
                         
-                        let m6 = Movies(movie_id: 3,movie_name: "Inception", movie_year: 2010,movie_image: "inception",category: c1,director: d1)
+                        let m6 = Movies(movie_id: 3,movie_name: "The Hateful Eight", movie_year: 2010,movie_image: "thehatefuleight",category: c1,director: d1)
                         
                         
                         list.append(m1)

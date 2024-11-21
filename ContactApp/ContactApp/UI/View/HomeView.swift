@@ -44,7 +44,7 @@ struct HomeView: View {
             
             let c2 = Person(person_id : 2, person_name: "Berkay Aktas", person_phone: "+90 542 123 456")
             
-            let c3 = Person(person_id : 3, person_name: "Filiz Aktas", person_phone: "+90 542 123 456")
+            let c3 = Person(person_id : 3, person_name: "Aybuke Aktas", person_phone: "+90 542 123 456")
             
             list.append(c1)
             list.append(c2)

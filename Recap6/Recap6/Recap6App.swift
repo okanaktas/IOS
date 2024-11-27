@@ -2,7 +2,7 @@
 //  Recap6App.swift
 //  Recap6
 //
-//  Created by Okan Aktas on 21.11.2024.
+//  Created by Okan Aktas on 26.11.2024.
 //
 
 import SwiftUI

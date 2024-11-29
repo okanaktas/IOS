@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  SuperHeros
+//  SuperHeroes
 //
 //  Created by Okan Aktas on 29.11.2024.
 //

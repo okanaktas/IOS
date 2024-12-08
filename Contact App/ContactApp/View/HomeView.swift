@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         NavigationStack {
-            VStack {
+            List {
                
                 
                 
@@ -19,6 +19,13 @@ struct HomeView: View {
             }
             .padding()
             .navigationTitle("Contact")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink(destination: AddContact()) {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
         }
     }
 }

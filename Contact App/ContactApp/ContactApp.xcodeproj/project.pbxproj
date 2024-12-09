@@ -20,7 +20,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		0B176B992D05299000FDBCD5 /* ContactApp */ = {
+		0B36DA642D06746D00E62862 /* ContactApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ContactApp;
 			sourceTree = "<group>";
@@ -41,7 +41,7 @@
 		0B176B8E2D05299000FDBCD5 = {
 			isa = PBXGroup;
 			children = (
-				0B176B992D05299000FDBCD5 /* ContactApp */,
+				0B36DA642D06746D00E62862 /* ContactApp */,
 				0B176B982D05299000FDBCD5 /* Products */,
 				0B176BAA2D0529CC00FDBCD5 /* View */,
 			);
@@ -81,7 +81,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				0B176B992D05299000FDBCD5 /* ContactApp */,
+				0B36DA642D06746D00E62862 /* ContactApp */,
 			);
 			name = ContactApp;
 			packageProductDependencies = (

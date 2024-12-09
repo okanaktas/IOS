@@ -12,6 +12,12 @@ struct ContactDetails: View {
     @State var tfName = ""
     @State var tfPhone = ""
     
+    var contact = Contacts()
+    
+    func update(contactID : Int, contactName : String, contactPhone: String){
+        print("Update: \(contactID) - \(contactName) - \(contactPhone)")
+    }
+    
     var body: some View {
         
         NavigationStack {
@@ -26,7 +32,7 @@ struct ContactDetails: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Button("Update"){
-                    
+                    update(contactID: contact.contact_id!, contactName: tfName, contactPhone: tfPhone)
                 }
                 .padding()
                 .background(.blue)
@@ -35,6 +41,9 @@ struct ContactDetails: View {
                 
                 
             }.navigationTitle("Contact Details")
+        }.onAppear(){
+            self.tfName = self.contact.contact_name ?? "No Value"
+            self.tfPhone = self.contact.contact_phone ?? "No Value"
         }
     }
 }

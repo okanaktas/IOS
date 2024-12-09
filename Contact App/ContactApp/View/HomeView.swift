@@ -13,7 +13,17 @@ struct HomeView: View {
     
     @State private var searchWord = ""
     
-    var contact = Contacts()
+    //Hangi satırı sildiysek onun indexini veriyor -> at offsets: IndexSet
+    func delete(at offsets: IndexSet){
+        //Bilgi almak için kullandığımız yapı
+        //sildiğimiz kisi listesini verecek
+        let contact = contactList[offsets.first!]
+        //Gerçekten silme işleminin gerçektiği kısım
+        contactList.remove(at: offsets.first!)
+        
+        //silme işlemleri id ile olur
+        print("Deleted contact: \(contact.contact_id!)")
+    }
     
     var body: some View {
         
@@ -29,7 +39,7 @@ struct HomeView: View {
                     NavigationLink(destination: ContactDetails(contact: contactItem)){
                         ContactLineDesign(contact: contactItem)
                     }
-                }
+                }.onDelete(perform: delete)
                 
             }
             .navigationTitle("Contact")

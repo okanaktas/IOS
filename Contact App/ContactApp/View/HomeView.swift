@@ -17,6 +17,10 @@ struct HomeView: View {
         NavigationStack {
             List {
                 
+                /*
+                 Sol taraf (contact:): Parametre adı (hangi veri bekleniyor?).
+                 Sağ taraf (contact): Gönderilen veri (hangi veri gönderiliyor?)
+                 */
                 ForEach(contactList) { contact in
                     NavigationLink(destination: ContactDetails(contact: contact)){
                         ContactLineDesign(contact: contact)

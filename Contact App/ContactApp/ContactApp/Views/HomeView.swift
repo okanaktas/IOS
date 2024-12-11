@@ -9,15 +9,26 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State private var contacts = [Contacts]()
+    @State private var contactsList = [Contacts]()
     
     @State private var searchText = ""
+    
+    //Hangi degeri sildiysek onun degerini veriyor
+    func delete(at offsets : IndexSet){
+        //Bilgi amaçlı kullandığımız yapı - sildiğimiz kisi nesnesini veriyor
+        let contact = contactsList[offsets.first!]
+        //Gerçekten silinen yer
+        contactsList.remove(at: offsets.first!)
+        
+        //silme işlemleri id ile gerçekleşir
+        print("Delete Contact: \(contact.contact_id!)")
+    }
     
     var body: some View {
         NavigationStack {
             VStack {
                 List{
-                    ForEach(contacts){i in
+                    ForEach(contactsList){i in
                         NavigationLink(destination: DetailsView(contact : i)){
                             
                             VStack(alignment: .leading, spacing: 16){
@@ -35,6 +46,7 @@ struct HomeView: View {
                         
                     }
                 }
+                .onDelete(perform: delete)
             }
             .navigationTitle("Contacts")
             .toolbar{
@@ -58,7 +70,7 @@ struct HomeView: View {
                 list.append(c2)
                 list.append(c3)
                 
-                contacts = list
+                contactsList = list
             }
             .searchable(text: $searchText, prompt: "Searh Contact")
             .onChange(of: searchText){

@@ -12,9 +12,7 @@ struct AddContactView: View {
     @State private var contactName = ""
     @State private var contactPhone = ""
     
-    func ekranaBas(name : String , phone : String){
-        print("Gelen Degerler: \(name) - \(phone)")
-    }
+  var viewModel = AddContactViewViewModel()
     
     var body: some View {
         NavigationStack{
@@ -29,7 +27,7 @@ struct AddContactView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Button("Add Contact"){
-                    ekranaBas(name: contactName , phone: contactPhone)
+                    viewModel.ekranaBas(name: contactName , phone: contactPhone)
                 }
                 .padding()
                 .background(.tint)

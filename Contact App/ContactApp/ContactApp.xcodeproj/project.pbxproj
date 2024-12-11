@@ -16,11 +16,6 @@
 			path = ContactApp;
 			sourceTree = "<group>";
 		};
-		0BD6A5682D0936600026D499 /* Views */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Views;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +32,6 @@
 		0BD6A53D2D0925580026D499 = {
 			isa = PBXGroup;
 			children = (
-				0BD6A5682D0936600026D499 /* Views */,
 				0BD6A5482D0925580026D499 /* ContactApp */,
 				0BD6A5472D0925580026D499 /* Products */,
 			);
@@ -68,7 +62,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				0BD6A5482D0925580026D499 /* ContactApp */,
-				0BD6A5682D0936600026D499 /* Views */,
 			);
 			name = ContactApp;
 			packageProductDependencies = (

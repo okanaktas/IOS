@@ -14,9 +14,7 @@ struct DetailsView: View {
     
     var contact = Contacts()
     
-    func update(id : Int, name : String , phone : String){
-        print("Güncellenen degerler: \(name) - \(phone)")
-    }
+   var viewModel = DetailsViewViewModel()
     
     var body: some View {
         NavigationStack{
@@ -31,7 +29,7 @@ struct DetailsView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Button("Update"){
-                    update(id: contact.contact_id!,name: contactName , phone: contactPhone)
+                    viewModel.update(id: contact.contact_id!,name: contactName , phone: contactPhone)
                 }
                 .padding()
                 .background(.green)

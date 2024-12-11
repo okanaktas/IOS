@@ -30,23 +30,10 @@ struct HomeView: View {
                 List{
                     ForEach(contactsList){i in
                         NavigationLink(destination: DetailsView(contact : i)){
-                            
-                            VStack(alignment: .leading, spacing: 16){
-                                
-                                Text("\(i.contact_name!)")
-                                    .font(.system(size: 22))
-                                    .foregroundColor(.primary)
-                                
-                                Text("\(i.contact_phone!)")
-                                    .font(.system(size: 18))
-                                    .foregroundColor(.gray)
-                                
-                            }
+                            ContactRow(contact: i)
                         }
-                        
-                    }
+                    }.onDelete(perform: delete)
                 }
-                .onDelete(perform: delete)
             }
             .navigationTitle("Contacts")
             .toolbar{

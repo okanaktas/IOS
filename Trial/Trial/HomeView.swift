@@ -4,10 +4,9 @@
 //
 //  Created by Okan Aktas on 4.01.2025.
 //
-
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     @State private var leftChoice = "❓"
     @State private var rightChoice = "❓"
     @State private var leftScore = 0
@@ -121,9 +120,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }
-

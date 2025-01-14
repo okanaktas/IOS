@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  Trial
-//
-//  Created by Okan Aktas on 4.01.2025.
-//
 import SwiftUI
 
 struct HomeView: View {
@@ -12,7 +6,11 @@ struct HomeView: View {
     @State private var leftScore = 0
     @State private var rightScore = 0
     @State private var winnerText = "Shake to Start!"
-    @State private var isAnimating = false // Animasyon durumu
+    @State private var isAnimating = false
+    @State private var isGameStarted = false // Oyun başladığında
+    @State private var countdown = 3 // 3 saniyelik geri sayım
+    @State private var userChoice: String? = nil
+    @State private var aiChoice: String? = nil
 
     let choices = ["✊", "✋", "✌️"] // Taş, Kağıt, Makas
 
@@ -49,17 +47,57 @@ struct HomeView: View {
 
             Spacer()
 
-            // Choices Section
-            HStack {
-                Text(leftChoice)
-                    .font(.system(size: 80))
-                    .rotationEffect(isAnimating ? Angle(degrees: 360) : Angle(degrees: 0))
-                    .animation(isAnimating ? .linear(duration: 2).repeatForever(autoreverses: false) : .default, value: isAnimating)
-                
-                Text(rightChoice)
-                    .font(.system(size: 80))
-                    .rotationEffect(isAnimating ? Angle(degrees: 360) : Angle(degrees: 0))
-                    .animation(isAnimating ? .linear(duration: 2).repeatForever(autoreverses: false) : .default, value: isAnimating)
+            // Countdown Section
+            if isGameStarted {
+                Text("Time: \(countdown)")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.top)
+            }
+
+            Spacer()
+
+            // Seçim ekranı
+            if !isGameStarted {
+                HStack {
+                    Button(action: {
+                        userChoice = "✊"
+                        startGame()
+                    }) {
+                        Text("✊")
+                            .font(.system(size: 80))
+                    }
+                    
+                    Button(action: {
+                        userChoice = "✋"
+                        startGame()
+                    }) {
+                        Text("✋")
+                            .font(.system(size: 80))
+                    }
+                    
+                    Button(action: {
+                        userChoice = "✌️"
+                        startGame()
+                    }) {
+                        Text("✌️")
+                            .font(.system(size: 80))
+                    }
+                }
+            }
+
+            Spacer()
+
+            // Yapay zeka seçim ve kazanan gösterimi
+            if let aiChoice = aiChoice {
+                HStack {
+                    Text(aiChoice)
+                        .font(.system(size: 80))
+                        .padding(.top)
+                        .transition(.opacity)
+                    
+                    Spacer()
+                }
             }
 
             // Winner Text
@@ -69,52 +107,68 @@ struct HomeView: View {
 
             Spacer()
 
-            // Shake Instructions
-            Text("Shake for Roll!")
-                .font(.headline)
+            // Start Button
+            if !isGameStarted {
+                Button(action: {
+                    startGameCountdown()
+                }) {
+                    Text("Start")
+                        .font(.headline)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
                 .padding(.bottom)
+            }
         }
         .padding()
-        .onTapGesture {
-            startGameAnimation()
-        }
     }
 
-    func startGameAnimation() {
-        isAnimating = true
-        winnerText = "Rolling..."
-        leftChoice = "❓"
-        rightChoice = "❓"
+    func startGameCountdown() {
+        isGameStarted = true
+        countdown = 3
+        winnerText = "Get Ready!"
         
-        // 2 saniyelik bir gecikmeden sonra oyunu oynat
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            isAnimating = false
-            playGame()
+        // Geriye sayım başlatma
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            if countdown > 0 {
+                countdown -= 1
+            } else {
+                timer.invalidate()
+                startGame()
+            }
         }
     }
 
-    func playGame() {
-        // Randomly select choices for both players
-        let leftRandomChoice = choices.randomElement()!
-        let rightRandomChoice = choices.randomElement()!
+    func startGame() {
+        guard let userChoice = userChoice else { return }
 
-        leftChoice = leftRandomChoice
-        rightChoice = rightRandomChoice
+        // Yapay zekanın seçim yapması
+        let aiRandomChoice = choices.randomElement()!
+        aiChoice = aiRandomChoice
 
-        // Determine the winner
-        determineWinner(left: leftRandomChoice, right: rightRandomChoice)
+        // Sonuçları değerlendir
+        determineWinner(user: userChoice, ai: aiRandomChoice)
+
+        // Seçim yapıldıktan sonra kısa bir süre bekleyip seçim ekranını sıfırlayalım
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.userChoice = nil
+            self.aiChoice = nil
+            self.isGameStarted = false
+        }
     }
 
-    func determineWinner(left: String, right: String) {
-        if left == right {
+    func determineWinner(user: String, ai: String) {
+        if user == ai {
             winnerText = "It's a Draw!"
-        } else if (left == "✊" && right == "✌️") ||
-                  (left == "✋" && right == "✊") ||
-                  (left == "✌️" && right == "✋") {
-            winnerText = "Left Player Wins!"
+        } else if (user == "✊" && ai == "✌️") ||
+                  (user == "✋" && ai == "✊") ||
+                  (user == "✌️" && ai == "✋") {
+            winnerText = "You Win!"
             leftScore += 1
         } else {
-            winnerText = "Right Player Wins!"
+            winnerText = "AI Wins!"
             rightScore += 1
         }
     }

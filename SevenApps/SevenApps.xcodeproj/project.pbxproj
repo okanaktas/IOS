@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		0BC1C9462D6CCF6C007D1696 /* SevenApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SevenApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B3BAEB12D6CD0FB0037F496 /* SevenApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SevenApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		0BC1C9582D6CCF6D007D1696 /* Exceptions for "SevenApps" folder in "SevenApps" target */ = {
+		0B3BAEC32D6CD0FC0037F496 /* Exceptions for "SevenApps" folder in "SevenApps" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 0BC1C9452D6CCF6C007D1696 /* SevenApps */;
+			target = 0B3BAEB02D6CD0FB0037F496 /* SevenApps */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		0BC1C9482D6CCF6C007D1696 /* SevenApps */ = {
+		0B3BAEB32D6CD0FB0037F496 /* SevenApps */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				0BC1C9582D6CCF6D007D1696 /* Exceptions for "SevenApps" folder in "SevenApps" target */,
+				0B3BAEC32D6CD0FC0037F496 /* Exceptions for "SevenApps" folder in "SevenApps" target */,
 			);
 			path = SevenApps;
 			sourceTree = "<group>";
@@ -32,7 +32,7 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0BC1C9432D6CCF6C007D1696 /* Frameworks */ = {
+		0B3BAEAE2D6CD0FB0037F496 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,18 +42,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0BC1C93D2D6CCF6C007D1696 = {
+		0B3BAEA82D6CD0FB0037F496 = {
 			isa = PBXGroup;
 			children = (
-				0BC1C9482D6CCF6C007D1696 /* SevenApps */,
-				0BC1C9472D6CCF6C007D1696 /* Products */,
+				0B3BAEB32D6CD0FB0037F496 /* SevenApps */,
+				0B3BAEB22D6CD0FB0037F496 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		0BC1C9472D6CCF6C007D1696 /* Products */ = {
+		0B3BAEB22D6CD0FB0037F496 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0BC1C9462D6CCF6C007D1696 /* SevenApps.app */,
+				0B3BAEB12D6CD0FB0037F496 /* SevenApps.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,64 +61,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0BC1C9452D6CCF6C007D1696 /* SevenApps */ = {
+		0B3BAEB02D6CD0FB0037F496 /* SevenApps */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0BC1C9592D6CCF6D007D1696 /* Build configuration list for PBXNativeTarget "SevenApps" */;
+			buildConfigurationList = 0B3BAEC42D6CD0FC0037F496 /* Build configuration list for PBXNativeTarget "SevenApps" */;
 			buildPhases = (
-				0BC1C9422D6CCF6C007D1696 /* Sources */,
-				0BC1C9432D6CCF6C007D1696 /* Frameworks */,
-				0BC1C9442D6CCF6C007D1696 /* Resources */,
+				0B3BAEAD2D6CD0FB0037F496 /* Sources */,
+				0B3BAEAE2D6CD0FB0037F496 /* Frameworks */,
+				0B3BAEAF2D6CD0FB0037F496 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				0BC1C9482D6CCF6C007D1696 /* SevenApps */,
+				0B3BAEB32D6CD0FB0037F496 /* SevenApps */,
 			);
 			name = SevenApps;
 			packageProductDependencies = (
 			);
 			productName = SevenApps;
-			productReference = 0BC1C9462D6CCF6C007D1696 /* SevenApps.app */;
+			productReference = 0B3BAEB12D6CD0FB0037F496 /* SevenApps.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0BC1C93E2D6CCF6C007D1696 /* Project object */ = {
+		0B3BAEA92D6CD0FB0037F496 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					0BC1C9452D6CCF6C007D1696 = {
+					0B3BAEB02D6CD0FB0037F496 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 0BC1C9412D6CCF6C007D1696 /* Build configuration list for PBXProject "SevenApps" */;
+			buildConfigurationList = 0B3BAEAC2D6CD0FB0037F496 /* Build configuration list for PBXProject "SevenApps" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 0BC1C93D2D6CCF6C007D1696;
+			mainGroup = 0B3BAEA82D6CD0FB0037F496;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 0BC1C9472D6CCF6C007D1696 /* Products */;
+			productRefGroup = 0B3BAEB22D6CD0FB0037F496 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0BC1C9452D6CCF6C007D1696 /* SevenApps */,
+				0B3BAEB02D6CD0FB0037F496 /* SevenApps */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0BC1C9442D6CCF6C007D1696 /* Resources */ = {
+		0B3BAEAF2D6CD0FB0037F496 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,7 +128,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0BC1C9422D6CCF6C007D1696 /* Sources */ = {
+		0B3BAEAD2D6CD0FB0037F496 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,7 +138,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		0BC1C95A2D6CCF6D007D1696 /* Debug */ = {
+		0B3BAEC52D6CD0FC0037F496 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -153,7 +153,6 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -167,7 +166,7 @@
 			};
 			name = Debug;
 		};
-		0BC1C95B2D6CCF6D007D1696 /* Release */ = {
+		0B3BAEC62D6CD0FC0037F496 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -182,7 +181,6 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -196,7 +194,7 @@
 			};
 			name = Release;
 		};
-		0BC1C95C2D6CCF6D007D1696 /* Debug */ = {
+		0B3BAEC72D6CD0FC0037F496 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -259,7 +257,7 @@
 			};
 			name = Debug;
 		};
-		0BC1C95D2D6CCF6D007D1696 /* Release */ = {
+		0B3BAEC82D6CD0FC0037F496 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -318,25 +316,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0BC1C9412D6CCF6C007D1696 /* Build configuration list for PBXProject "SevenApps" */ = {
+		0B3BAEAC2D6CD0FB0037F496 /* Build configuration list for PBXProject "SevenApps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0BC1C95C2D6CCF6D007D1696 /* Debug */,
-				0BC1C95D2D6CCF6D007D1696 /* Release */,
+				0B3BAEC72D6CD0FC0037F496 /* Debug */,
+				0B3BAEC82D6CD0FC0037F496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0BC1C9592D6CCF6D007D1696 /* Build configuration list for PBXNativeTarget "SevenApps" */ = {
+		0B3BAEC42D6CD0FC0037F496 /* Build configuration list for PBXNativeTarget "SevenApps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0BC1C95A2D6CCF6D007D1696 /* Debug */,
-				0BC1C95B2D6CCF6D007D1696 /* Release */,
+				0B3BAEC52D6CD0FC0037F496 /* Debug */,
+				0B3BAEC62D6CD0FC0037F496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 0BC1C93E2D6CCF6C007D1696 /* Project object */;
+	rootObject = 0B3BAEA92D6CD0FB0037F496 /* Project object */;
 }

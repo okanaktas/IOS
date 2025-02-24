@@ -1,8 +1,9 @@
 import UIKit
 
-class UserListViewController: UIViewController {
+final class UserListViewController: UIViewController {
     
-    private var users: [User] = []
+    // MARK: - Properties
+    private let viewModel: UserListViewModel
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -11,12 +12,25 @@ class UserListViewController: UIViewController {
         return tableView
     }()
     
+    // MARK: - Initialization
+    init(viewModel: UserListViewModel = UserListViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        fetchUsers()
+        setupBindings()
+        viewModel.fetchUsers()
     }
     
+    // MARK: - Setup
     private func setupUI() {
         title = "User List"
         view.backgroundColor = .white
@@ -34,38 +48,28 @@ class UserListViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    private func fetchUsers() {
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else { return }
+    private func setupBindings() {
+        viewModel.onUsersUpdated = { [weak self] in
+            self?.tableView.reloadData()
+        }
         
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-            guard let self = self,
-                  let data = data,
-                  error == nil else {
-                print("Error fetching users:", error?.localizedDescription ?? "Unknown error")
-                return
-            }
-            
-            do {
-                let users = try JSONDecoder().decode([User].self, from: data)
-                DispatchQueue.main.async {
-                    self.users = users
-                    self.tableView.reloadData()
-                }
-            } catch {
-                print("Error decoding users:", error)
-            }
-        }.resume()
+        viewModel.onError = { [weak self] error in
+            let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self?.present(alert, animated: true)
+        }
     }
 }
 
+// MARK: - UITableView DataSource & Delegate
 extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return viewModel.users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath)
-        let user = users[indexPath.row]
+        let user = viewModel.user(at: indexPath.row)
         
         var content = cell.defaultContentConfiguration()
         content.text = user.name
@@ -77,5 +81,10 @@ extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let selectedUser = viewModel.user(at: indexPath.row)
+        let detailViewModel = UserDetailViewModel(user: selectedUser)
+        let detailVC = UserDetailViewController(viewModel: detailViewModel)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 } 

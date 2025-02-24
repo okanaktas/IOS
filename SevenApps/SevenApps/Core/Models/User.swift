@@ -5,4 +5,6 @@ struct User: Codable {
     let name: String
     let email: String
     let username: String
+    let phone: String
+    let website: String
 } 
